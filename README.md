@@ -27,7 +27,7 @@
 <p>In this code, we train and evaluate five different models using the preprocessed and feature engineered data. We use the following models: Logistic Regression, Random Forest Classifier, Support Vector Machine Classifier, Gradient Boosting Classifier, and Multinomial Naive Bayes Classifier. For each model, we perform 10-fold cross-validation and calculate the mean and maximum accuracy. We also visualize the confusion matrix for the iteration with the highest accuracy. The code can be run using the following command:</p>
 <pre><code>python train.py</code></pre>
 
-## Comparison of Model Performance
+## Comparison of Models Performance
 
 | Model        | Mean Accuracy | Best Accuracy |
 | ------------ | -------------| ------------- |
