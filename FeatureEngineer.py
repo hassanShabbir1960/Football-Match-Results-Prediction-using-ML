@@ -193,19 +193,22 @@ class FeatureEngineer:
 
 if __name__ == "__main__":
     
-    data = pd.read_csv("matches.csv")
+    import pandas as pd
     import DataPreprocessor as dp
+    from FeatureEngineer import FeatureEngineer
+
+    data = pd.read_csv("matches.csv")
 
     data = dp.DataPreprocessing(data).process_data()
 
     ## Creating features
 
     feature_engineer = FeatureEngineer(data)
-    
+
     base_line_features = feature_engineer.create_baseline_features()
     new_cols = feature_engineer.create_rolling_average_columns()
     preprocessed_data = feature_engineer.data
-    feature_engineer.data  = preprocessed_data = preprocessed_data.dropna()
+    feature_engineer.data = preprocessed_data = preprocessed_data.dropna()
 
     ## Testing features
 
@@ -213,7 +216,14 @@ if __name__ == "__main__":
     end_date = '2022-02-01'
     accuracy = feature_engineer.test_features(start_date, end_date, base_line_features+new_cols)
 
+    # Selecting the best features based on accuracy score
+    best_features = base_line_features + [c for c in new_cols if c in feature_engineer.selected_features]
+
+    # Saving the best features to a new CSV file
+    preprocessed_data[best_features].to_csv('best_features.csv', index=False)
+
     print(f"Accuracy score: {accuracy:.4f}")
+
 
 
 # In[ ]:
