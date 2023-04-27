@@ -23,3 +23,16 @@
 <pre><code>python FeatureEngineer.py</code></pre>
 
 
+<h2>5. Model Training and evaluation</h2>
+<p>In this code, we train and evaluate five different models using the preprocessed and feature engineered data. We use the following models: Logistic Regression, Random Forest Classifier, Support Vector Machine Classifier, Gradient Boosting Classifier, and Multinomial Naive Bayes Classifier. For each model, we perform 10-fold cross-validation and calculate the mean and maximum accuracy. We also visualize the confusion matrix for the iteration with the highest accuracy. The code can be run using the following command:</p>
+<pre><code>python train.py</code></pre>
+
+## Comparison of Model Performance
+
+| Model        | Mean Accuracy | Best Accuracy |
+| ------------ | -------------| ------------- |
+| Random Forest| 0.86         | 0.91          |
+| SVM          | 0.73         | 0.75          |
+| Logistic Reg.| 0.72         | 0.73          |
+| Naive Bayes  | 0.68         | 0.71          |
+| Decision Tree| 0.65         | 0.68          |
