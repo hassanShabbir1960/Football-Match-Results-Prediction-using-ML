@@ -5,10 +5,21 @@
 <pre><code>pip install -r requirements.txt</code></pre>
 <h2>1. Data Scraping</h2>
 <p>In this section, we scrape match and shooting data for English Premier League teams over a range of years. We use the Requests library to fetch webpages, BeautifulSoup to parse HTML content, and Pandas to handle and manipulate data in DataFrames. We start by importing necessary libraries and defining relevant functions to simplify the main process. We then iterate over the desired years, retrieve the league table, and extract the links to individual team pages. Next, we iterate through each team's URL, retrieve match data and shooting data, and merge them into a single DataFrame based on the match date. The final result is a DataFrame containing match information and shooting statistics for each team's matches in the Premier League over the specified years.</p>
+
+<pre><code>python scrapper.py</code></pre>
+
 <h2>2. Data Cleaning and Processing</h2>
 <p>In this code, we are performing data cleaning and processing on our scraped data. We start by identifying and removing columns that have the same value for all rows or consist only of NaN values. Once we have this information, we remove these columns from the DataFrame.</p>
 <p>Next, we check for missing values in the DataFrame. By examining the output, we can determine which columns have missing values and decide on further processing steps. This allows us to identify any issues in the data and handle them accordingly, ensuring that the data is clean and suitable for further analysis.</p>
-<h2>3. Feature Engineering</h2>
-<p>In this code, we perform feature engineering on the data by dropping irrelevant columns, creating rolling averages for specified columns in a group, creating a new column containing codes for the days of the week in a specified date column, creating a new column containing codes for the unique values in a specified opponent column, and creating a new column containing codes for the unique values in a specified venue column.</p>
-<h2>4. Visualization</h2>
+<pre><code>python DataPreprocessor.py</code></pre>
+
+<h2>3. Visualization</h2>
 <p>In this code, we create visualizations of the data using Plotly. We create a heatmap plot to display the goals scored by each team over time, a scatter plot to display the relationship between expected goals and actual goals for each team in the English Premier League, and calculate the average possession by team and sort by possession. We also calculate the number of goals scored and passes made by each player and group the data by team and venue to count the number of wins.</p>
+
+<pre><code>python DataVisualizer.py</code></pre>
+
+<h2>4. Feature Engineering</h2>
+<p>In this code, we perform feature engineering on the data by dropping irrelevant columns, creating rolling averages for specified columns in a group, creating a new column containing codes for the days of the week in a specified date column, creating a new column containing codes for the unique values in a specified opponent column, and creating a new column containing codes for the unique values in a specified venue column.</p>
+<pre><code>python FeatureEngineer.py</code></pre>
+
+
